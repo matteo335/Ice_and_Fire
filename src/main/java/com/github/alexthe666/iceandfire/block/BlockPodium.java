@@ -168,7 +168,6 @@ public class BlockPodium extends BlockContainer implements ICustomRendered {
     public enum EnumType implements IStringSerializable {
         OAK(0, "oak"), SPRUCE(1, "spruce"), BIRCH(2, "birch"), JUNGLE(3, "jungle"), ACACIA(4, "acacia"), DARK_OAK(5, "dark_oak", "big_oak");
         private static final BlockPodium.EnumType[] META_LOOKUP = new BlockPodium.EnumType[values().length];
-        private static final String __OBFID = "CL_00002081";
 
         static {
             BlockPodium.EnumType[] var0 = values();

@@ -1,6 +1,5 @@
 package com.github.alexthe666.iceandfire.asm;
 
-import com.github.alexthe666.iceandfire.patcher.IceAndFireRuntimePatcher;
 import net.minecraftforge.fml.relauncher.IFMLLoadingPlugin;
 
 import java.util.Map;
@@ -15,7 +14,7 @@ public class IceAndFirePlugin implements IFMLLoadingPlugin {
 
     @Override
     public String[] getASMTransformerClass() {
-        return new String[]{IceAndFireRuntimePatcher.class.getName()};
+        return new String[0];
     }
 
     @Override
