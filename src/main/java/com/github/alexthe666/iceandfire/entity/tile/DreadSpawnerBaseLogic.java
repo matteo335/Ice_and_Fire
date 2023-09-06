@@ -35,7 +35,7 @@ public abstract class DreadSpawnerBaseLogic extends MobSpawnerBaseLogic {
     private int spawnRange = 4;
 
     @Nullable
-    private ResourceLocation getEntityId() {
+    public ResourceLocation getEntityId() {
         String s = this.spawnData.getNbt().getString("id");
         return StringUtils.isNullOrEmpty(s) ? null : new ResourceLocation(s);
     }
