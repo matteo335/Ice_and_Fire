@@ -133,7 +133,7 @@ public class IceAndFireConfig {
     public int dragonsteelBaseArmor = 12;
     public int dragonsteelBaseDurability = 8000;
     public boolean spawnStructuresOnSuperflat = true;
-    public boolean dragonMovedWronglyFix = false;
+    public boolean dragonMovedWronglyFix = true;
     public int dreadlandsDimensionId = -12;
     public boolean weezerTinkers = true;
     public double dragonBlockBreakingDropChance = 0.1D;
