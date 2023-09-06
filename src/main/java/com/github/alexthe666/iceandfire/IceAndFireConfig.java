@@ -15,7 +15,7 @@ public class IceAndFireConfig {
     public boolean generateDragonDens = true;
     public int generateDragonDenChance = 180;
     public boolean generateDragonRoosts = true;
-    public int generateDragonRoostChance = 360;
+    public int generateDragonRoostChance = 400;
     public int dragonDenGoldAmount = 4;
     public boolean generateSnowVillages = true;
     public int generateSnowVillageChance = 100;
@@ -45,7 +45,7 @@ public class IceAndFireConfig {
     public boolean canDragonsDespawn = true;
     public boolean doDragonsSleep = true;
     public boolean dragonDigWhenStuck = true;
-    public int dragonBreakBlockCooldown = 5;
+    public int dragonBreakBlockCooldown = 10;
     public boolean dragonDropSkull = true;
     public boolean dragonDropHeart = true;
     public boolean dragonDropBlood = true;
