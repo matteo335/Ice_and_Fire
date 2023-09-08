@@ -4,6 +4,7 @@ import net.minecraft.client.model.ModelBiped;
 import net.minecraft.client.model.ModelRenderer;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.item.EntityArmorStand;
+import net.minecraft.client.model.ModelBase;
 
 public class ModelFireDragonArmor extends ModelBiped {
     public ModelRenderer HornL;

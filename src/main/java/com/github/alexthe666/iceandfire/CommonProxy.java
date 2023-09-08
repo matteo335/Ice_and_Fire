@@ -54,10 +54,10 @@ public class CommonProxy {
             throw new RuntimeException(e);
         }
     }
-    
+
     @SubscribeEvent
     public static void registerVillagers(RegistryEvent.Register<VillagerRegistry.VillagerProfession> event) {
-    	IafVillagerRegistry.INSTANCE.init();
+        IafVillagerRegistry.INSTANCE.init();
         event.getRegistry().register(IafVillagerRegistry.INSTANCE.fisherman);
         event.getRegistry().register(IafVillagerRegistry.INSTANCE.craftsman);
         event.getRegistry().register(IafVillagerRegistry.INSTANCE.shaman);
@@ -96,60 +96,59 @@ public class CommonProxy {
     }
 
     @SubscribeEvent
-    public static void registerEntities(RegistryEvent.Register<EntityEntry> event) {
-        registerUnspawnable(EntityEntryBuilder.<EntityDragonEgg>create(), event, EntityDragonEgg.class, "dragonegg", 1);
-        registerUnspawnable(EntityEntryBuilder.<EntityDragonArrow>create(), event, EntityDragonArrow.class, "dragonarrow", 2);
-        registerUnspawnable(EntityEntryBuilder.<EntityDragonSkull>create(), event, EntityDragonSkull.class, "dragonskull", 3);
-        registerSpawnable(EntityEntryBuilder.<EntityFireDragon>create(), event, EntityFireDragon.class, "firedragon", 5, 0X340000, 0XA52929, 256, 3);
-        registerSpawnable(EntityEntryBuilder.<EntityIceDragon>create(), event, EntityIceDragon.class, "icedragon", 7, 0XB5DDFB, 0X7EBAF0, 256, 3);
-        registerUnspawnable(EntityEntryBuilder.<EntityDragonFireCharge>create(), event, EntityDragonFireCharge.class, "dragonfirecharge", 8);
-        registerUnspawnable(EntityEntryBuilder.<EntityDragonIceCharge>create(), event, EntityDragonIceCharge.class, "dragonicecharge", 9);
-        registerSpawnable(EntityEntryBuilder.<EntitySnowVillager>create(), event, EntitySnowVillager.class, "snowvillager", 10, 0X3C2A23, 0X70B1CF);
-        registerUnspawnable(EntityEntryBuilder.<EntityHippogryphEgg>create(), event, EntityHippogryphEgg.class, "hippogryphegg", 11);
-        registerSpawnable(EntityEntryBuilder.<EntityHippogryph>create(), event, EntityHippogryph.class, "hippogryph", 12, 0XD8D8D8, 0XD1B55D);
-        registerUnspawnable(EntityEntryBuilder.<EntityStoneStatue>create(), event, EntityStoneStatue.class, "stonestatue", 13);
-        registerSpawnable(EntityEntryBuilder.<EntityGorgon>create(), event, EntityGorgon.class, "gorgon", 14, 0XD0D99F, 0X684530);
-        registerSpawnable(EntityEntryBuilder.<EntityPixie>create(), event, EntityPixie.class, "if_pixie", 15, 0XFF7F89, 0XE2CCE2);
-        registerSpawnable(EntityEntryBuilder.<EntityCyclops>create(), event, EntityCyclops.class, "cyclops", 17, 0XB0826E, 0X3A1F0F);
-        registerSpawnable(EntityEntryBuilder.<EntitySiren>create(), event, EntitySiren.class, "siren", 18, 0X8EE6CA, 0XF2DFC8);
-        registerSpawnable(EntityEntryBuilder.<EntityHippocampus>create(), event, EntityHippocampus.class, "hippocampus", 19, 0X4491C7, 0X4FC56B);
-        registerSpawnable(EntityEntryBuilder.<EntityDeathWorm>create(), event, EntityDeathWorm.class, "deathworm", 20, 0XD1CDA3, 0X423A3A);
-        registerUnspawnable(EntityEntryBuilder.<EntityDeathWormEgg>create(), event, EntityDeathWormEgg.class, "deathwormegg", 21);
-        registerSpawnable(EntityEntryBuilder.<EntityCockatrice>create(), event, EntityCockatrice.class, "if_cockatrice", 22, 0X8F5005, 0X4F5A23);
-        registerUnspawnable(EntityEntryBuilder.<EntityCockatriceEgg>create(), event, EntityCockatriceEgg.class, "if_cockatriceegg", 23);
-        registerSpawnable(EntityEntryBuilder.<EntityStymphalianBird>create(), event, EntityStymphalianBird.class, "stymphalianbird", 24, 0X744F37, 0X9E6C4B);
-        registerUnspawnable(EntityEntryBuilder.<EntityStymphalianFeather>create(), event, EntityStymphalianFeather.class, "stymphalianfeather", 25);
-        registerUnspawnable(EntityEntryBuilder.<EntityStymphalianArrow>create(), event, EntityStymphalianArrow.class, "stymphalianarrow", 26);
-        registerSpawnable(EntityEntryBuilder.<EntityTroll>create(), event, EntityTroll.class, "if_troll", 27, 0X3D413D, 0X58433A);
-        registerSpawnable(EntityEntryBuilder.<EntityMyrmexWorker>create(), event, EntityMyrmexWorker.class, "myrmex_worker", 28, 0XA16026, 0X594520);
-        registerSpawnable(EntityEntryBuilder.<EntityMyrmexSoldier>create(), event, EntityMyrmexSoldier.class, "myrmex_soldier", 29, 0XA16026, 0X7D622D);
-        registerSpawnable(EntityEntryBuilder.<EntityMyrmexSentinel>create(), event, EntityMyrmexSentinel.class, "myrmex_sentinel", 30, 0XA16026, 0XA27F3A);
-        registerSpawnable(EntityEntryBuilder.<EntityMyrmexRoyal>create(), event, EntityMyrmexRoyal.class, "myrmex_royal", 31, 0XA16026, 0XC79B48);
-        registerSpawnable(EntityEntryBuilder.<EntityMyrmexQueen>create(), event, EntityMyrmexQueen.class, "myrmex_queen", 32, 0XA16026, 0XECB855);
-        registerUnspawnable(EntityEntryBuilder.<EntityMyrmexEgg>create(), event, EntityMyrmexEgg.class, "myrmex_egg", 33);
-        registerSpawnable(EntityEntryBuilder.<EntityAmphithere>create(), event, EntityAmphithere.class, "amphithere", 34, 0X597535, 0X00AA98);
-        registerUnspawnable(EntityEntryBuilder.<EntityAmphithereArrow>create(), event, EntityAmphithereArrow.class, "amphitherearrow", 35);
-        registerSpawnable(EntityEntryBuilder.<EntitySeaSerpent>create(), event, EntitySeaSerpent.class, "seaserpent", 36, 0X008299, 0XC5E6E7, 256, 3);
-        registerUnspawnable(EntityEntryBuilder.<EntitySeaSerpentBubbles>create(), event, EntitySeaSerpentBubbles.class, "seaserpentbubble", 37);
-        registerUnspawnable(EntityEntryBuilder.<EntitySeaSerpentArrow>create(), event, EntitySeaSerpentArrow.class, "seaserpentarrow", 38);
-        registerUnspawnable(EntityEntryBuilder.<EntityChainTie>create(), event, EntityChainTie.class, "chaintie", 39);
-        registerUnspawnable(EntityEntryBuilder.<EntityPixieCharge>create(), event, EntityPixieCharge.class, "pixiecharge", 40);
-        registerUnspawnable(EntityEntryBuilder.<EntityMyrmexSwarmer>create(), event, EntityMyrmexSwarmer.class, "myrmex_swarmer", 41);
-        registerUnspawnable(EntityEntryBuilder.<EntityTideTrident>create(), event, EntityTideTrident.class, "tide_trident", 42);
-        registerUnspawnable(EntityEntryBuilder.<EntityMobSkull>create(), event, EntityMobSkull.class, "if_mob_skull", 43);
-        registerSpawnable(EntityEntryBuilder.<EntityDreadThrall>create(), event, EntityDreadThrall.class, "dread_thrall", 44, 0XE0E6E6, 0X00FFFF);
-        registerSpawnable(EntityEntryBuilder.<EntityDreadGhoul>create(), event, EntityDreadGhoul.class, "dread_ghoul", 45, 0XE0E6E6, 0X7B838A);
-        registerSpawnable(EntityEntryBuilder.<EntityDreadBeast>create(), event, EntityDreadBeast.class, "dread_beast", 46, 0XE0E6E6, 0X38373C);
-        registerSpawnable(EntityEntryBuilder.<EntityDreadScuttler>create(), event, EntityDreadScuttler.class, "dread_scuttler", 47, 0XE0E6E6, 0X4D5667);
-        registerSpawnable(EntityEntryBuilder.<EntityDreadLich>create(), event, EntityDreadLich.class, "dread_lich", 48, 0XE0E6E6, 0X274860);
-        registerUnspawnable(EntityEntryBuilder.<EntityDreadLichSkull>create(), event, EntityDreadLichSkull.class, "dread_lich_skull", 49);
-        registerSpawnable(EntityEntryBuilder.<EntityDreadKnight>create(), event, EntityDreadKnight.class, "dread_knight", 50, 0XE0E6E6, 0X4A6C6E);
-        registerSpawnable(EntityEntryBuilder.<EntityDreadHorse>create(), event, EntityDreadHorse.class, "dread_horse", 51, 0XE0E6E6, 0XACACAC);
-        registerSpawnable(EntityEntryBuilder.<EntityHydra>create(), event, EntityHydra.class, "if_hydra", 52, 0X8B8B78, 0X2E372B, 256, 3);
-        registerUnspawnable(EntityEntryBuilder.<EntityHydraBreath>create(), event, EntityHydraBreath.class, "hydra_breath", 53);
-        registerUnspawnable(EntityEntryBuilder.<EntityHydraArrow>create(), event, EntityHydraArrow.class, "hydra_arrow", 54);
+    public static void registerEntities(final RegistryEvent.Register<EntityEntry> event) {
+        registerUnspawnable(EntityEntryBuilder.create(), event, (Class<? extends Entity>)EntityDragonEgg.class, "dragonegg", 1);
+        registerUnspawnable(EntityEntryBuilder.create(), event, (Class<? extends Entity>)EntityDragonArrow.class, "dragonarrow", 2);
+        registerUnspawnable(EntityEntryBuilder.create(), event, (Class<? extends Entity>)EntityDragonSkull.class, "dragonskull", 3);
+        registerSpawnable(EntityEntryBuilder.create(), event, (Class<? extends Entity>)EntityFireDragon.class, "firedragon", 5, 3407872, 10823977, 256, 3);
+        registerSpawnable(EntityEntryBuilder.create(), event, (Class<? extends Entity>)EntityIceDragon.class, "icedragon", 7, 11918843, 8305392, 256, 3);
+        registerUnspawnable(EntityEntryBuilder.create(), event, (Class<? extends Entity>)EntityDragonFireCharge.class, "dragonfirecharge", 8);
+        registerUnspawnable(EntityEntryBuilder.create(), event, (Class<? extends Entity>)EntityDragonIceCharge.class, "dragonicecharge", 9);
+        registerSpawnable(EntityEntryBuilder.create(), event, (Class<? extends Entity>)EntitySnowVillager.class, "snowvillager", 10, 3942947, 7385551);
+        registerUnspawnable(EntityEntryBuilder.create(), event, (Class<? extends Entity>)EntityHippogryphEgg.class, "hippogryphegg", 11);
+        registerSpawnable(EntityEntryBuilder.create(), event, (Class<? extends Entity>)EntityHippogryph.class, "hippogryph", 12, 14211288, 13743453);
+        registerUnspawnable(EntityEntryBuilder.create(), event, (Class<? extends Entity>)EntityStoneStatue.class, "stonestatue", 13);
+        registerSpawnable(EntityEntryBuilder.create(), event, (Class<? extends Entity>)EntityGorgon.class, "gorgon", 14, 13687199, 6833456);
+        registerSpawnable(EntityEntryBuilder.create(), event, (Class<? extends Entity>)EntityPixie.class, "if_pixie", 15, 16744329, 14863586);
+        registerSpawnable(EntityEntryBuilder.create(), event, (Class<? extends Entity>)EntityCyclops.class, "cyclops", 17, 11567726, 3809039);
+        registerSpawnable(EntityEntryBuilder.create(), event, (Class<? extends Entity>)EntitySiren.class, "siren", 18, 9365194, 15917000);
+        registerSpawnable(EntityEntryBuilder.create(), event, (Class<? extends Entity>)EntityHippocampus.class, "hippocampus", 19, 4493767, 5227883);
+        registerSpawnable(EntityEntryBuilder.create(), event, (Class<? extends Entity>)EntityDeathWorm.class, "deathworm", 20, 13749667, 4340282);
+        registerUnspawnable(EntityEntryBuilder.create(), event, (Class<? extends Entity>)EntityDeathWormEgg.class, "deathwormegg", 21);
+        registerSpawnable(EntityEntryBuilder.create(), event, (Class<? extends Entity>)EntityCockatrice.class, "if_cockatrice", 22, 9392133, 5200419);
+        registerUnspawnable(EntityEntryBuilder.create(), event, (Class<? extends Entity>)EntityCockatriceEgg.class, "if_cockatriceegg", 23);
+        registerSpawnable(EntityEntryBuilder.create(), event, (Class<? extends Entity>)EntityStymphalianBird.class, "stymphalianbird", 24, 7622455, 10382411);
+        registerUnspawnable(EntityEntryBuilder.create(), event, (Class<? extends Entity>)EntityStymphalianFeather.class, "stymphalianfeather", 25);
+        registerUnspawnable(EntityEntryBuilder.create(), event, (Class<? extends Entity>)EntityStymphalianArrow.class, "stymphalianarrow", 26);
+        registerSpawnable(EntityEntryBuilder.create(), event, (Class<? extends Entity>)EntityTroll.class, "if_troll", 27, 4014397, 5784378);
+        registerSpawnable(EntityEntryBuilder.create(), event, (Class<? extends Entity>)EntityMyrmexWorker.class, "myrmex_worker", 28, 10575910, 5850400);
+        registerSpawnable(EntityEntryBuilder.create(), event, (Class<? extends Entity>)EntityMyrmexSoldier.class, "myrmex_soldier", 29, 10575910, 8217133);
+        registerSpawnable(EntityEntryBuilder.create(), event, (Class<? extends Entity>)EntityMyrmexSentinel.class, "myrmex_sentinel", 30, 10575910, 10649402);
+        registerSpawnable(EntityEntryBuilder.create(), event, (Class<? extends Entity>)EntityMyrmexRoyal.class, "myrmex_royal", 31, 10575910, 13081416);
+        registerSpawnable(EntityEntryBuilder.create(), event, (Class<? extends Entity>)EntityMyrmexQueen.class, "myrmex_queen", 32, 10575910, 15513685);
+        registerUnspawnable(EntityEntryBuilder.create(), event, (Class<? extends Entity>)EntityMyrmexEgg.class, "myrmex_egg", 33);
+        registerSpawnable(EntityEntryBuilder.create(), event, (Class<? extends Entity>)EntityAmphithere.class, "amphithere", 34, 5862709, 43672);
+        registerUnspawnable(EntityEntryBuilder.create(), event, (Class<? extends Entity>)EntityAmphithereArrow.class, "amphitherearrow", 35);
+        registerSpawnable(EntityEntryBuilder.create(), event, (Class<? extends Entity>)EntitySeaSerpent.class, "seaserpent", 36, 33433, 12969703, 256, 3);
+        registerUnspawnable(EntityEntryBuilder.create(), event, (Class<? extends Entity>)EntitySeaSerpentBubbles.class, "seaserpentbubble", 37);
+        registerUnspawnable(EntityEntryBuilder.create(), event, (Class<? extends Entity>)EntitySeaSerpentArrow.class, "seaserpentarrow", 38);
+        registerUnspawnable(EntityEntryBuilder.create(), event, (Class<? extends Entity>)EntityChainTie.class, "chaintie", 39);
+        registerUnspawnable(EntityEntryBuilder.create(), event, (Class<? extends Entity>)EntityPixieCharge.class, "pixiecharge", 40);
+        registerUnspawnable(EntityEntryBuilder.create(), event, (Class<? extends Entity>)EntityMyrmexSwarmer.class, "myrmex_swarmer", 41);
+        registerUnspawnable(EntityEntryBuilder.create(), event, EntityTideTrident.class, "tide_trident", 42);
+        registerUnspawnable(EntityEntryBuilder.create(), event, (Class<? extends Entity>)EntityMobSkull.class, "if_mob_skull", 43);
+        registerSpawnable(EntityEntryBuilder.create(), event, (Class<? extends Entity>)EntityDreadThrall.class, "dread_thrall", 44, 14739174, 65535);
+        registerSpawnable(EntityEntryBuilder.create(), event, (Class<? extends Entity>)EntityDreadGhoul.class, "dread_ghoul", 45, 14739174, 8094602);
+        registerSpawnable(EntityEntryBuilder.create(), event, (Class<? extends Entity>)EntityDreadBeast.class, "dread_beast", 46, 14739174, 3684156);
+        registerSpawnable(EntityEntryBuilder.create(), event, (Class<? extends Entity>)EntityDreadScuttler.class, "dread_scuttler", 47, 14739174, 5068391);
+        registerSpawnable(EntityEntryBuilder.create(), event, (Class<? extends Entity>)EntityDreadLich.class, "dread_lich", 48, 14739174, 2574432);
+        registerUnspawnable(EntityEntryBuilder.create(), event, (Class<? extends Entity>)EntityDreadLichSkull.class, "dread_lich_skull", 49);
+        registerSpawnable(EntityEntryBuilder.create(), event, (Class<? extends Entity>)EntityDreadKnight.class, "dread_knight", 50, 14739174, 4877422);
+        registerSpawnable(EntityEntryBuilder.create(), event, (Class<? extends Entity>)EntityDreadHorse.class, "dread_horse", 51, 14739174, 11316396);
+        registerSpawnable(EntityEntryBuilder.create(), event, (Class<? extends Entity>)EntityHydra.class, "if_hydra", 52, 9145208, 3028779, 256, 3);
+        registerUnspawnable(EntityEntryBuilder.create(), event, (Class<? extends Entity>)EntityHydraBreath.class, "hydra_breath", 53);
+        registerUnspawnable(EntityEntryBuilder.create(), event, (Class<? extends Entity>)EntityHydraArrow.class, "hydra_arrow", 54);
     }
-
     public static void registerSpawnable(EntityEntryBuilder builder, RegistryEvent.Register<EntityEntry> event, Class<? extends Entity> entityClass, String name, int id, int mainColor, int subColor) {
         id += 900;
         builder.entity(entityClass);
@@ -180,25 +179,33 @@ public class CommonProxy {
     }
 
     @SubscribeEvent
-    public static void registerItems(RegistryEvent.Register<Item> event) {
-        // ItemBlocks
+    public static void registerItems(final RegistryEvent.Register<Item> event) {
         try {
-            for (Field f : IafBlockRegistry.class.getDeclaredFields()) {
-                Object obj = f.get(null);
+            for (final Field f : IafBlockRegistry.class.getDeclaredFields()) {
+                final Object obj = f.get(null);
                 if (obj instanceof Block) {
                     ItemBlock itemBlock;
                     if (obj == IafBlockRegistry.jar_pixie) {
-                        itemBlock = ((BlockJar) obj).new ItemBlockJar((Block) obj);
-                    } else if (obj instanceof BlockPixieHouse) {
-                        itemBlock = ((BlockPixieHouse) obj).new ItemBlockPixieHouse((Block) obj);
-                    } else if (obj instanceof BlockPodium) {
-                        itemBlock = new ItemBlockPodium((Block) obj);
-                    } else if (obj instanceof BlockMyrmexResin) {
-                        itemBlock = new ItemBlockMyrmexResin((Block) obj);
-                    } else if (obj instanceof BlockGenericSlab) {
+                        final BlockJar this$0 = (BlockJar)obj;
+                        this$0.getClass();
+                        itemBlock = this$0.new ItemBlockJar((Block)obj);
+                    }
+                    else if (obj instanceof BlockPixieHouse) {
+                        final BlockPixieHouse this$2 = (BlockPixieHouse)obj;
+                        this$2.getClass();
+                        itemBlock = this$2.new ItemBlockPixieHouse((Block)obj);
+                    }
+                    else if (obj instanceof BlockPodium) {
+                        itemBlock = new ItemBlockPodium((Block)obj);
+                    }
+                    else if (obj instanceof BlockMyrmexResin) {
+                        itemBlock = new ItemBlockMyrmexResin((Block)obj);
+                    }
+                    else if (obj instanceof BlockGenericSlab) {
                         itemBlock = ((BlockGenericSlab)obj).getItemBlock();
-                    } else {
-                        itemBlock = new ItemBlock((Block) obj);
+                    }
+                    else {
+                        itemBlock = new ItemBlock((Block)obj);
                     }
                     itemBlock.setRegistryName(((Block) obj).getRegistryName());
                     event.getRegistry().register(itemBlock);
@@ -276,7 +283,6 @@ public class CommonProxy {
     }
 
     public void preRender() {
-
     }
 
     public void render() {
@@ -285,23 +291,23 @@ public class CommonProxy {
     public void postRender() {
     }
 
-    public void spawnParticle(String name, double x, double y, double z, double motX, double motY, double motZ) {
-        spawnParticle(name, x, y, z, motX, motY, motZ, 1.0F);
+    public void spawnParticle(final String name, final double x, final double y, final double z, final double motX, final double motY, final double motZ) {
+        this.spawnParticle(name, x, y, z, motX, motY, motZ, 1.0f);
     }
 
-    public void spawnDragonParticle(String name, double x, double y, double z, double motX, double motY, double motZ, EntityDragonBase entityDragonBase) {
+    public void spawnDragonParticle(final String name, final double x, final double y, final double z, final double motX, final double motY, final double motZ, final EntityDragonBase entityDragonBase) {
     }
 
-    public void spawnParticle(String name, double x, double y, double z, double motX, double motY, double motZ, float size) {
+    public void spawnParticle(final String name, final double x, final double y, final double z, final double motX, final double motY, final double motZ, final float size) {
     }
 
-    public void openBestiaryGui(ItemStack book) {
+    public void openBestiaryGui(final ItemStack book) {
     }
 
-    public void openMyrmexStaffGui(ItemStack staff) {
+    public void openMyrmexStaffGui(final ItemStack staff) {
     }
 
-    public Object getArmorModel(int armorId) {
+    public Object getArmorModel(final int armorId) {
         return null;
     }
 
@@ -310,8 +316,8 @@ public class CommonProxy {
     }
 
     @SubscribeEvent
-    public void onConfigChanged(ConfigChangedEvent.OnConfigChangedEvent event) {
-        if (event.getModID().equalsIgnoreCase(IceAndFire.MODID)) {
+    public void onConfigChanged(final ConfigChangedEvent.OnConfigChangedEvent event) {
+        if (event.getModID().equalsIgnoreCase("iceandfire")) {
             IceAndFire.syncConfig();
         }
     }
@@ -320,14 +326,13 @@ public class CommonProxy {
         return 0;
     }
 
-    public void setDragon3rdPersonView(int view) {
+    public void setDragon3rdPersonView(final int view) {
     }
 
-    public void openMyrmexAddRoomGui(ItemStack staff, BlockPos pos, EnumFacing facing) {
+    public void openMyrmexAddRoomGui(final ItemStack staff, final BlockPos pos, final EnumFacing facing) {
     }
 
-
-    public Object getDreadlandsRender(int i) {
+    public Object getDreadlandsRender(final int i) {
         return null;
     }
 
@@ -335,10 +340,11 @@ public class CommonProxy {
         return 0;
     }
 
-    public void setPreviousViewType(int view) {
+    public void setPreviousViewType(final int view) {
     }
 
-    public void updateDragonArmorRender(String clear){}
+    public void updateDragonArmorRender(final String clear) {
+    }
 
     public boolean shouldSeeBestiaryContents() {
         return true;
